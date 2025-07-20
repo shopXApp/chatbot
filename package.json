@@ -1,0 +1,81 @@
+{
+  "name": "xlnc-chat-widget",
+  "version": "1.0.0",
+  "description": "A powerful, customizable chat widget that mimics tawk.to design while integrating with WhatsApp Web API, AI assistance, and calendar scheduling.",
+  "main": "tawkWidget.js",
+  "files": [
+    "tawkWidget.js",
+    "api-integration.js",
+    "widget-config.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "python -m http.server 8000 || python3 -m http.server 8000 || npx serve .",
+    "dev": "npx live-server --port=8000 --open=test.html",
+    "build": "echo 'No build step required - vanilla JS'",
+    "test": "echo 'Open test.html in browser to test functionality'",
+    "lint": "npx eslint tawkWidget.js api-integration.js widget-config.js",
+    "format": "npx prettier --write *.js *.html *.md",
+    "minify": "npx terser tawkWidget.js -o tawkWidget.min.js --compress --mangle",
+    "docs": "echo 'Documentation available in README.md'"
+  },
+  "keywords": [
+    "chat",
+    "widget",
+    "tawk",
+    "whatsapp",
+    "ai",
+    "customer-support",
+    "javascript",
+    "vanilla-js",
+    "meeting-scheduler",
+    "knowledge-base",
+    "responsive",
+    "customizable"
+  ],
+  "author": {
+    "name": "XLNC Technologies",
+    "email": "info@xlnc.com",
+    "url": "https://xlnc.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/xlnc/chat-widget#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xlnc/chat-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xlnc/chat-widget/issues"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "terser": "^5.0.0",
+    "live-server": "^1.2.0",
+    "serve": "^14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "jsdelivr": "tawkWidget.js",
+  "unpkg": "tawkWidget.js",
+  "cdn": {
+    "jsdelivr": "https://cdn.jsdelivr.net/npm/xlnc-chat-widget@latest/tawkWidget.js",
+    "unpkg": "https://unpkg.com/xlnc-chat-widget@latest/tawkWidget.js"
+  },
+  "config": {
+    "port": 8000
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/xlnc"
+  }
+}

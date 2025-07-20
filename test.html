@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLNC Chat Widget Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .test-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .test-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .test-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .test-card p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .test-button {
+            background: linear-gradient(45deg, #00d084, #00b874);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 208, 132, 0.3);
+        }
+        
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .instructions h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .instructions ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .test-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>XLNC Chat Widget</h1>
+            <p>Experience our powerful, tawk.to-inspired chat widget with AI assistance, WhatsApp integration, and meeting scheduling capabilities.</p>
+        </div>
+        
+        <div class="features">
+            <h2>🚀 Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div>
+                        <strong>Intelligent Chat</strong><br>
+                        AI-powered responses with knowledge base
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📅</div>
+                    <div>
+                        <strong>Meeting Scheduler</strong><br>
+                        Automated calendar integration
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <strong>WhatsApp Integration</strong><br>
+                        Seamless messaging experience
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div>
+                        <strong>Customizable Design</strong><br>
+                        Multiple themes and positions
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div>
+                        <strong>Analytics Ready</strong><br>
+                        Track engagement and conversions
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <strong>Fast & Lightweight</strong><br>
+                        Optimized performance
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-sections">
+            <div class="test-card">
+                <h3>🟢 Default Green Theme</h3>
+                <p>Standard configuration with green color scheme, bottom-right positioning, and default features enabled.</p>
+                <button class="test-button" onclick="loadWidget('green', 'bottom-right')">Test Green Theme</button>
+            </div>
+            
+            <div class="test-card">
+                <h3>🔵 Blue Theme</h3>
+                <p>Professional blue theme perfect for corporate websites and business applications.</p>
+                <button class="test-button" onclick="loadWidget('blue', 'bottom-left')">Test Blue Theme</button>
+            </div>
+            
+            <div class="test-card">
+                <h3>🟣 Purple Theme</h3>
+                <p>Modern purple theme with creative styling, great for tech and creative agencies.</p>
+                <button class="test-button" onclick="loadWidget('purple', 'top-right')">Test Purple Theme</button>
+            </div>
+            
+            <div class="test-card">
+                <h3>⚫ Dark Theme</h3>
+                <p>Sleek dark theme for modern websites and applications with dark mode support.</p>
+                <button class="test-button" onclick="loadWidget('dark', 'top-left')">Test Dark Theme</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>🧪 Testing Instructions</h3>
+            <ol>
+                <li><strong>Click any theme button</strong> above to load the chat widget</li>
+                <li><strong>Click the chat bubble</strong> that appears to open the widget</li>
+                <li><strong>Try the greeting</strong> and click "Start Chat"</li>
+                <li><strong>Fill the form</strong> with your name, email, and phone number</li>
+                <li><strong>Test conversations</strong> by asking about services, pricing, or support</li>
+                <li><strong>Try scheduling</strong> a meeting using quick actions</li>
+                <li><strong>Explore the menu</strong> (⋮) for additional options</li>
+                <li><strong>Test mobile</strong> by resizing your browser window</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Widget Configuration -->
+    <script src="widget-config.js"></script>
+    
+    <!-- API Integration -->
+    <script src="api-integration.js"></script>
+
+    <script>
+        let currentWidget = null;
+        
+        function loadWidget(theme, position) {
+            // Remove existing widget if any
+            if (currentWidget) {
+                const existingWidget = document.querySelector('.xlnc-chat-widget');
+                if (existingWidget) {
+                    existingWidget.remove();
+                }
+                currentWidget = null;
+            }
+            
+            // Remove existing script
+            const existingScript = document.querySelector('script[src="tawkWidget.js"]');
+            if (existingScript) {
+                existingScript.remove();
+            }
+            
+            // Create new script element
+            const script = document.createElement('script');
+            script.src = 'tawkWidget.js';
+            script.setAttribute('key', `xlnc_test_${theme}_key_2024`);
+            script.setAttribute('secret', `xlnc_test_${theme}_secret_${Date.now()}`);
+            script.setAttribute('greeting', `Hello! Testing the ${theme} theme. Welcome to XLNC Technologies! How can we help you today?`);
+            script.setAttribute('position', position);
+            script.setAttribute('theme', theme);
+            script.setAttribute('company', 'XLNC Technologies (Test)');
+            
+            // Add script to document
+            document.body.appendChild(script);
+            
+            // Show notification
+            showNotification(`${theme.charAt(0).toUpperCase() + theme.slice(1)} theme loaded! Look for the chat bubble in the ${position} corner.`, theme);
+        }
+        
+        function showNotification(message, theme) {
+            // Remove existing notification
+            const existing = document.querySelector('.test-notification');
+            if (existing) {
+                existing.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = 'test-notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${getThemeColor(theme)};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                z-index: 999998;
+                font-weight: 600;
+                max-width: 300px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOut 0.3s ease-out';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.remove();
+                        }
+                    }, 300);
+                }
+            }, 3000);
+        }
+        
+        function getThemeColor(theme) {
+            const colors = {
+                green: '#00d084',
+                blue: '#0084ff',
+                purple: '#7c3aed',
+                dark: '#1f2937'
+            };
+            return colors[theme] || '#00d084';
+        }
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(100%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateX(100%);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Load default widget on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadWidget('green', 'bottom-right');
+            }, 1000);
+        });
+        
+        // Add keyboard shortcuts for testing
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case '1':
+                        e.preventDefault();
+                        loadWidget('green', 'bottom-right');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        loadWidget('blue', 'bottom-left');
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        loadWidget('purple', 'top-right');
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        loadWidget('dark', 'top-left');
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
